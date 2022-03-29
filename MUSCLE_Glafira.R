@@ -11,7 +11,7 @@ library(annotate)
 BiocManager::install("Biostrings")
 library(Biostrings)
 
-a#installing other packages
+#installing other packages
 install.packages("seqinr")
 library(seqinr)
 
