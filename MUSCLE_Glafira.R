@@ -28,9 +28,21 @@ install.packages(reshape2)
 library(reshape2)
 
 #Loading and naming the files
-HCov=read.FASTA("HCov-HKU1_NC_006577", type = "DNA")
-MERS=read.FASTA("MERS-CoV_NC_019843", type = "DNA")
-SARS=read.FASTA("SARS-Cov_NC_004718", type = "DNA")
+
+HCov_229E=read.FASTA("./Sequences/HCov-229E_NC_002645", type = "DNA")
+HCov_HKU1=read.FASTA("./Sequences/HCov-HKU1_NC_006577", type = "DNA")
+HCov_NL63=read.FASTA("./Sequences/HCov-NL63_NC_005831", type = "DNA")
+HCov_OC43=read.FASTA("./Sequences/HCov-OC43_NC_006213", type = "DNA")
+HCov_BS=read.FASTA("./Sequences/hCoV_BS001349.fasta", type = "DNA")
+HCov_ON=read.FASTA("./Sequences/hCoV_ON078487.fasta", type = "DNA")
+MERS=read.FASTA("./Sequences/MERS-CoV_NC_019843", type = "DNA")
+SARS_Cov=read.FASTA("./Sequences/SARS-Cov_NC_004718", type = "DNA")
+SARS_Cov2=read.FASTA("./Sequences/SARS-CoV2_NC_045512", type = "DNA")
+BAT=read.FASTA("./Sequences/Bat_Cov_DQ-022305.fasta", type = "DNA")
+SAMBAR_DEER=read.FASTA("./Sequences/SambarDeerCov_FJ425189.1.fasta", type = "DNA")
+Water_DEER=read.FASTA("./Sequences/WaterDeer_MG518518.1.fasta", type = "DNA")
+WHITE_DEER_OL=read.FASTA("./Sequences/CoV_WTDeer_OL855841.fasta", type = "DNA")
+WHITE_DEER_FJ=read.FASTA("./Sequences/White-tailedDeerCov_FJ425187.1", type = "DNA")
 
 #converting to strings
 
@@ -90,4 +102,6 @@ ggplot(data = Alignment_P, aes(x=Var1, y=Var2, fill=value)) +
   scale_y_discrete(labels=c("HCov","MERS","SARS"))+
   theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5))+
   scale_fill_gradientn(colours=c("white","grey96","grey88","grey76","grey77","grey17"))
-  
+
+#saving the matrix to make the tree 
+write.csv(Alignment_mat,file="cov_distance_GE.csv")
