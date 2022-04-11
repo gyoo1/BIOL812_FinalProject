@@ -1,17 +1,22 @@
 # Generating Distance Matrix
-alignmentbin <- as.DNAbin(cov_alignment.fasta)
-AlignDistance<-dist.dna(alignmentbin, model="K80")
+library(ape)
+library(muscle)
+library(Biostrings)
+alignedreads<- read.FASTA("cov_alignment.fasta", type = "DNA")
+AlignDistance<-dist.dna(alignedreads, model="K80")
 class(AlignDistance)
 length(AlignDistance)
-names(DNAstring)
 
+#create distance matrix
+distmatrix<- as.matrix(AlignDistance)
+distmatrix
 
 #Creating Tree (Neighbour Joining Approach)
-CoV_distance<- read.csv(file="CoV_Distance_HL.csv", header=T, row.names=1) #reading distance matrix
-CoV_distance#might not be necessary with how we have changed our code
+#CoV_distance<- read.csv(file="CoV_Distance_HL.csv", header=T, row.names=1) #reading distance matrix
+#CoV_distance#might not be necessary with how we have changed our code
 
 #Convert to dist object
-CoV_distfortree<-as.dist(CoV_distance)
+CoV_distfortree<-as.dist(distmatrix)
 
 #Create Tree
 library(ape)
