@@ -12,7 +12,6 @@ seq_string <- readDNAStringSet(filepath = "./covseq_DNAStringSet")
 
 # Multiple alignments with MUSCLE
 seq_align <- muscle::muscle(stringset= seq_string, quiet=T)
-seq_align
 
 # Save alignment output as fasta file
 seq_align_as_align <- msaConvert(seq_align, "bios2mds::align") #convert to align object

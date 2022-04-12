@@ -80,3 +80,6 @@ ggtree(CovTree) + xlim(0, 0.85) + geom_tiplab() +
                    label = "Bovine Coronavirus", offset = -0.05, offset.text = 0.01)
 ggsave("CoV_phylogeny_annotated.pdf", width = 40, height = 20, units = "cm") #save cladogram
 
+
+# Subset tree for SARS-CoV-2 ----
+
