@@ -1,0 +1,20 @@
+---
+title: "Coronavirus Evolutionary Relationship"
+authors: Casmey,K.*, Yoo,G.*, Ermakova, G.*, and Lounder, H*. 
+"All authors contributed to the conceptualization, formal analysis, methodology, project administration, visualization, and writing."
+---
+#Background 
+In December 2019, numerous cases of an unknown respiratory virus were reported in the city of Wuhan, China. A coronavirus, SARS-CoV-2 was identified as the causative agent for the illness. This virus is closely related to SARS-CoV which was responsible for the SARS outbreak of 2002-2004. A pandemic was declared in March 2020 due to the SARS-CoV-2 virus. Other coronaviruses, NL63, 229E, HKU1, and OC43, cause common colds in humans. Coronaviruses are also present in various animals. We seek to address the following questions. 
+
+#Questions
+1. What is the evolutionary relationship among the human coronavirus strains?
+
+2. What is the evolutionary relationship between the human and animal coronavirus strains?
+
+3. To design a therapy (i.e., mRNA vaccine), which sequence would you target in hopes to carry over immunity between other strains as well? 
+
+
+#Methods
+
+
+#Results and Interpretations
