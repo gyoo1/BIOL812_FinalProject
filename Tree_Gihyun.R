@@ -75,11 +75,39 @@ ggsave("CoV_cladogram_boot.pdf", width = 30, height = 30, units = "cm") #save cl
 # Annotate Tree ----
 ggtree(CovTree, branch.length = "none") + geom_text(aes(label=node)) #view node labels
 
+#Get silhouettes from phylopic
+species <- c("Odocoileus_virginianus", "Eptesicus_fuscus", "Orthocoronavirinae")
+pics <- ggimage::phylopic_uid(species)
+pics2 <- data.frame(node = c(11, 5, 2), image = pics$uid, name = pics$name) 
+        #label pics with associated nodes
+
+#plot
 ggtree(CovTree) + xlim(0, 0.85) + geom_tiplab() +
+        #add clade bars
         geom_strip("WtD-CoV", "WD-BCoV", barsize = 2, color = "red", 
-                   label = "Bovine Coronavirus", offset = -0.05, offset.text = 0.01)
-ggsave("CoV_phylogeny_annotated.pdf", width = 40, height = 20, units = "cm") #save cladogram
+                   label = "Bovine Coronavirus", offset = -0.005, offset.text = 0.01) +
+        geom_strip("SARS-CoV", "Bat-SARS-CoV", barsize = 2, color = "green",
+                   label = "SARS-CoV", offset = -0.42, offset.text = 0.01) +
+        geom_strip("WtD-SARS-CoV2", "SARS-CoV2-BS", barsize = 2, color = "blue",
+                   label = "Current COVID", offset = -0.62, offset.text = 0.01) +
+        
+        #add pictures
+        geom_cladelab(data = pics2[1,],
+                      mapping = aes(node = node, label = name, image = image), 
+                      geom = "phylopic", imagecolor = c("red"),
+                      offset = 0.055, hjust = -2) +
+        geom_cladelab(data = pics2[2,],
+                      mapping = aes(node = node, label = name, image = image), 
+                      geom = "phylopic", imagecolor = c("green"),
+                      offset = 0.1) +
+        geom_cladelab(data = pics2[3,],
+                      mapping = aes(node = node, label = name, image = image), 
+                      geom = "phylopic", imagecolor = c("blue"),
+                      offset = 0.13, vjust = -1) +
+        
+        #add boostrap values
+        geom_text2(aes(subset = !isTip, label = c(1:14, bs_CovTree)), 
+                   hjust = 1.1, vjust = 1.5)
 
-
-# Subset tree for SARS-CoV-2 ----
-
+#save cladogram
+ggsave("CoV_phylogeny_annotated.pdf", width = 40, height = 20, units = "cm")

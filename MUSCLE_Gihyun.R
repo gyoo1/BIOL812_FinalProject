@@ -6,6 +6,7 @@ library(Biostrings)
 library(annotate)
 library(muscle)
 library(bios2mds)
+library(msa)
 
 # Load DNAStringSet file
 seq_string <- readDNAStringSet(filepath = "./covseq_DNAStringSet")
