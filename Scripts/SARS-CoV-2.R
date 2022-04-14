@@ -18,7 +18,7 @@ CoV2 <- c("CoV_WTDeer_OL855841", "hCoV_BS001349", "hCoV_ON078487", "SARS-CoV2_NC
 fastaconc(CoV2, inputdir = "./Sequences", out.file = "./Output/CoV2_concatenated.fasta") 
 #concatenate all sequences into a single .fasta file
 
-CoV2_seq <- read.FASTA("CoV2_concatenated.fasta") #read concatenated sequence
+CoV2_seq <- read.FASTA("./Output/CoV2_concatenated.fasta") #read concatenated sequence
 
 # Convert DNASbin to DNAStringSet file ----
 CoV2_string <- CoV2_seq %>% as.character %>% lapply(.,paste0,collapse="") %>%
@@ -102,10 +102,37 @@ ggsave("./Output/CoV2_cladogram_annotated.pdf", width = 20, height = 20, units =
 # Facets ----
 #run Tree_Gihyun.R first
 #requires plot from Tree_Gihyun.R loaded into the environment
-FullTree <- ggtree(CovTree, layout="circular", branch.length = "none") + 
-        geom_tiplab(offset = 0.2) + 
+FullTree <- ggtree(CovTree, layout="circular", branch.length = "none") + geom_tiplab(offset = 0.2) + 
         geom_point2(aes(subset = (node %in% c(16:26))), shape=16, size=7, colour = "white") +
-        geom_text2(aes(subset = !isTip, label = c(1:14, bs_CovTree)), size = 3)
+        
+        #add bootstrap values
+        geom_text2(aes(subset = !isTip, label = c(1:14, bs_CovTree)), size = 3) +
+        
+        #add clade bars
+        geom_strip("WtD-CoV", "WD-BCoV", barsize = 2, color = "firebrick2", 
+                   label = "Bovine Coronavirus", offset = 7.9, offset.text = 0.8) +
+        geom_strip("SARS-CoV", "Bat-SARS-CoV", barsize = 2, color = "springgreen4",
+                   label = "SARS", offset = 9.1, offset.text = 3) +
+        geom_strip("WtD-SARS-CoV2", "SARS-CoV2-BS", barsize = 2, color = "blue2",
+                   label = "COVID-19", offset = 11, offset.text = 2) +
+        
+        #add pictures
+        geom_cladelab(data = pics2[1:3,],
+                      mapping = aes(node = node, label = name, image = image), 
+                      geom = "phylopic", imagecolor = c("grey44"), 
+                      offset = 5.45, imagesize = 0.035) +
+        geom_cladelab(data = pics2[4,],
+                      mapping = aes(node = node, label = name, image = image), 
+                      geom = "phylopic", imagecolor = c("grey44"), 
+                      offset = 8.8, imagesize = 0.04) +
+        geom_cladelab(data = pics2[5,],
+                      mapping = aes(node = node, label = name, image = image), 
+                      geom = "phylopic", imagecolor = c("grey44"), 
+                      offset = 7, imagesize = 0.045) +
+        geom_cladelab(data = pics2[6,],
+                      mapping = aes(node = node, label = name, image = image), 
+                      geom = "phylopic", imagecolor = c("blue2"), offset = 13)
+
 SubTree <- ggtree(Cov2Tree, layout="circular", branch.length = "none") + 
         xlim(-15, 15) + geom_tiplab(offset = 1) +
         geom_text2(aes(subset = !isTip, label = c(1:4, bs_Cov2Tree)),
@@ -117,8 +144,10 @@ SubTree <- ggtree(Cov2Tree, layout="circular", branch.length = "none") +
                       offset = -17)
 
 library(grid)
-grid.newpage() # Open new page on grid device
-pushViewport(viewport(layout = grid.layout(1, 2))) #set up plotting grid with 1 row + 2 cols
-print(FullTree, vp = viewport(layout.pos.row = 1,layout.pos.col = 1))
-print(SubTree, vp = viewport(layout.pos.row = 1,layout.pos.col = 2))
+pdf("./Output/Covid_Cladograms.pdf", width = 18, height = 12)
+        grid.newpage() # Open new page on grid device
+        pushViewport(viewport(layout = grid.layout(3, 5))) #set up plotting grid with 1 row + 2 cols
+        print(FullTree, vp = viewport(layout.pos.row = 1:3,layout.pos.col = 1:3))
+        print(SubTree, vp = viewport(layout.pos.row = 1:3,layout.pos.col = 4:5))
+dev.off()
 
