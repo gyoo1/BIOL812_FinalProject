@@ -5,7 +5,7 @@ authors: Casmey,K.*, Yoo,G.*, Ermakova, G.*, and Lounder, H*.
 ---
 #Background 
 In December 2019, numerous cases of an unknown respiratory virus were reported in the city of Wuhan, China. A coronavirus, SARS-CoV-2 was identified as the causative agent for the illness. This virus is closely related to SARS-CoV which was responsible for the SARS outbreak of 2002-2004. A pandemic was declared in March 2020 due to the SARS-CoV-2 virus. Other coronaviruses, NL63, 229E, HKU1, and OC43, cause common colds in humans. Coronaviruses are also present in various animals. We seek to address the following questions. 
-
+***
 #Questions
 1. What is the evolutionary relationship among the human coronavirus strains?
 
@@ -13,14 +13,27 @@ In December 2019, numerous cases of an unknown respiratory virus were reported i
 
 3. To design a therapy (i.e., mRNA vaccine), which sequence would you target in hopes to carry over immunity between other strains as well? 
 
-
+***
 #Methods
 i) Data aquisition: Retrieve whole genome sequences of various CoV strains from NCBI GenBank in FASTA file format
+
+Number | Accession Number | Abbreviation | Genome | Organism | Length (bp)
+---------------------------------------------------------------------------
+1      | OL855841.1       | WtD-SARS-CoV2|Severe acute respiratory syndrome Caronavirus-2 | White-tailed deed (*Odocoileus virginianus*)| 29831
+
+OL855841.1
+WtD-SARS-CoV2
+Severe acute respiratory syndrome Coronavirus-2
+White-tailed deer (Odocoileus virginianus)
+29831
+
+
+
 ii) Sequence concatenation: Using python script read_FASTA.py, combine downloaded CoV FASTA files into a single file containing all the downloaded sequences and save the file with '.fasta' extension. 
 iii) Using R script DataPrep.R, read the file containing concatenated CoV sequence data as a DNAset object. Using the same script, convert the DNAset object into a DNAStringSet object and save for MUSCLE multiple sequence alignment. Identify any potential gaps between the sequences by plotting a histogram of sequence length. No significant sequence gaps were identified. 
 iv) Using the Run_MUSCLE.sh (bash) script in unix/linux, call the MUSCLE.R script to perform a MUSCLE multiple sequence alignment of selected CoV sequences from part i. Save the output as a FASTA file. 
 v) Using R script Dist_Tree.R, load the alignment file and convert to a DNAbin. Using DNAbin object, generate a distance matrix, plot, and save as a .csv file. 
 vi) Still using the Dist_Tree.R script, use the distance matrix generated in v to generate a neighbour-joining tree and visualize. Use the neighbour-joining tree, generate a circular cladogram to depict the relationship among the selected CoV strains from part i. Calculate bootstrap values and plot values on phylogenetic tree and circular cladogram and save the output. 
   
-
+***
 #Results and Interpretations
