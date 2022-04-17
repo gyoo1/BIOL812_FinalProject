@@ -21,11 +21,7 @@ Number | Accession Number | Abbreviation | Genome | Organism | Length (bp)
 ---------------------------------------------------------------------------
 1      | OL855841.1       | WtD-SARS-CoV2|Severe acute respiratory syndrome Caronavirus-2 | White-tailed deed (*Odocoileus virginianus*)| 29831
 
-OL855841.1
-WtD-SARS-CoV2
-Severe acute respiratory syndrome Coronavirus-2
-White-tailed deer (Odocoileus virginianus)
-29831
+
 
 
 
