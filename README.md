@@ -56,11 +56,11 @@ Assignment prepared for BIOL 812 Introduction to Computational Analysis Winter 2
 3. Run_MUSCLE.sh - runs the MUSCLE.R script in commandline to produce an       alignment file "cov_alignment.fasta"
 4. Dist_Tree.R - Based on the "cov_alignment.fasta", creates a distance        matrix ("DistMatrix.pdf" and "DistMatrix.csv"), cladogram
    ("CoV_cladogram.pdf"), phylogram ("CoV_phylogram.pdf"), cladogram with      bootstrap values ("CoV_cladogram_bs"), annotated phylogram                  ("CoV_phylo_annotated.pdf"), and annotated cladogram                        ("CoV_clado_annotated.pdf")
+5. SARS-Cov-2.R - converts 4 SARS sequences ("CoV_WTDeer_OL855841",            "hCoV_BS001349", "hCoV_ON078487", "SARS-CoV2_NC_045512") into 1             concatenated fasta file ("CoV2_concatenated.fasta"), runs a MUSCLE          alignment ("CoV2_alignment.fasta"), creates distance matrix                 ("DistMatrix_CoV2.pdf","DistMatrix_CoV2.csv"), and cladogram                ("CoV2_cladogram_annotated.pdf","Covid_Cladograms.pdf").
 
-5. Cov 2
 
 # Output
-
+1. 
 
 
 ![pipeline for the BIOL 812 assignment](./Pipeline.png)
