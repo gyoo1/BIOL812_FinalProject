@@ -5,7 +5,6 @@
 
 module load StdEnv/2020 r/4.1.2
 
-echo Running MUSCLE file...
+#run MUSCLE
 
-chmod +x MUSCLE.R
-Rscript --slave --vanilla --no-restore MUSCLE.R
+R CMD BATCH MUSCLE.R
