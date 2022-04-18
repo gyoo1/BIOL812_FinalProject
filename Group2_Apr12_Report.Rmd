@@ -40,5 +40,7 @@ Number | Accession | Abbreviation | Genome | Organism | Length (bp)
 13 | NC_005831.2 | HCoV-NL63 | Human Coronavirus NL63 | Human | 27553
 14 | NC_002645.1 | HCoV-229E | Human Coronavirus 229E | Human | 27317
 
+We used whole-genome sequences of 14 coronavirus strains, all publically available from GenBank. Our sample includes 4 strains responsible for the current COVID-19 pandemic (SARS-CoV-2), with the alpha, delta, and omicron strains represented, along with a SARS-CoV-2 strain from white-tailed deer. We also include 2 strains of the SARS-CoV virus, responsible for the SARS epidemic. We use SARS strains from human and Chinese horeshoe bats. We also include other coronaviruses, 
+
 
 ## Results and Interpretations
