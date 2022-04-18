@@ -70,8 +70,8 @@ We used whole-genome sequences of 14 coronavirus strains, all publically availab
 **Figure 2.** Distance matrix of the 14 coronavirus sequences in our study.
 
 ![](./Figures/Covid_cladograms.png)
-**Figure 3.** Neighbour-joining cladograms for coronavirus strains. Left tree represents the full set of strains used in our study. Right tree shows the relationships between just the 4 SARS-CoV-2 strains. Numbers represent boostrap values. Significant groups have been labelled: blue for SARS-CoV-2 (causing COVID-19), green for SARS-CoV (causing SARS), and red for bovine coronaviruses. Branch lengths have been removed for simplicity.
+**Figure 3.** Neighbour-joining cladograms for select coronavirus strains. Left tree represents the full set of strains used in our study. Right tree shows the relationships between just the 4 SARS-CoV-2 strains. Numbers represent boostrap values. Significant groups have been labelled: blue for SARS-CoV-2 (causing COVID-19), green for SARS-CoV (causing SARS), and red for bovine coronaviruses. Branch lengths have been removed for simplicity.
 
 ![](./Figures/CoV_phylo_annotated.png)
-**Figure 4.** Neighbour-joining tree for coronavirus strains. Branch lengths represent the relative amount of sequence divergence, as estimated by a distance matrix. Numbers represent boostrap values. Significant groups have been labelled: blue for SARS-CoV-2 (causing COVID-19), green for SARS-CoV (causing SARS), and red for bovine coronaviruses. 
+**Figure 4.** Neighbour-joining tree for select coronavirus strains. Branch lengths represent the relative amount of sequence divergence, as estimated by a distance matrix. Numbers represent boostrap values. Significant groups have been labelled: blue for SARS-CoV-2 (causing COVID-19), green for SARS-CoV (causing SARS), and red for bovine coronaviruses. 
 
