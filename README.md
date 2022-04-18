@@ -63,5 +63,5 @@ Assignment prepared for BIOL 812 Introduction to Computational Analysis Winter 2
 1. 
 
 
-![pipeline for the BIOL 812 assignment](./Pipeline.png)
+![pipeline for the BIOL 812 assignment](./Figures/Pipeline.png)
 
