@@ -4,11 +4,11 @@
 
 This is an R Markdown document that generates a github readme.md file.
 
-Assignment prepared for BIOL 812 Introduction to Computational Analysis Winter 2022. In this pipeline, we concatenated the DNA sequences for several Coronavirus variants (Including MERS, SARS and COVID-19) in order to run a MUSCLE multiple sequence alignment. Using this alignment we generated a distance matrix and a phylogeny tree in order to examine the evolutionary relationship between the different variants. 
+Assignment prepared for BIOL 812 Introduction to Computational Analysis Winter 2022. In this pipeline, we concatenated DNA sequences (in Python) for 14 Coronavirus variants (Including MERS, SARS and COVID-19) in order to run a MUSCLE multiple sequence alignment (R script ran in Unix). Using this alignment we generated a distance matrix, and phylogeny trees (In R) in order to examine the evolutionary relationship between the different variants. We also repeated these steps (concatenate, MUSCLE, Distance matrix, phylogeny trees) for 4 of the SARS sequences (In R).
 
 # Sequences
  1. Bat_Cov_DQ-022305.fasta : Bat SARS coronavirus HKU3-1, complete genome
-    sequence obtained from: https://www.ncbi.nlm.nih.gov/nuccore/DQ022305.2?report=genbank
+    sequence obtained from:     https://www.ncbi.nlm.nih.gov/nuccore/DQ022305.2?report=genbank
     
  2. CoV_WTDeer_OL855841.fasta: white-tailed deer SARS 2 isolate
     sequence obtained from: https://www.ncbi.nlm.nih.gov/nuccore/OL855841.1?report=fasta
@@ -50,8 +50,8 @@ Assignment prepared for BIOL 812 Introduction to Computational Analysis Winter 2
     sequence obtained from: https://www.ncbi.nlm.nih.gov/nuccore/FJ425187.1
     
     
-# Scripts
-1. Read_FASTA.py - converts the fasta sequences from the "sequences" folder    into 1 concatenated file needed for MUSCLE
+# Scripts and their Outputs
+1. Read_FASTA.py - converts the 14 fasta sequences from the "sequences"        folder into 1 concatenated file needed for MUSCLE
 2. MUSCLE.R - MUSCLE sequence alignment script for the concatenated fasta      file
 3. Run_MUSCLE.sh - runs the MUSCLE.R script in commandline to produce an       alignment file "cov_alignment.fasta"
 4. Dist_Tree.R - Based on the "cov_alignment.fasta", creates a distance        matrix ("DistMatrix.pdf" and "DistMatrix.csv"), cladogram
@@ -59,9 +59,12 @@ Assignment prepared for BIOL 812 Introduction to Computational Analysis Winter 2
 5. SARS-Cov-2.R - converts 4 SARS sequences ("CoV_WTDeer_OL855841",            "hCoV_BS001349", "hCoV_ON078487", "SARS-CoV2_NC_045512") into 1             concatenated fasta file ("CoV2_concatenated.fasta"), runs a MUSCLE          alignment ("CoV2_alignment.fasta"), creates distance matrix                 ("DistMatrix_CoV2.pdf","DistMatrix_CoV2.csv"), and cladogram                ("CoV2_cladogram_annotated.pdf","Covid_Cladograms.pdf").
 
 
-# Output
-1. 
+# Figures
+1. Cov_phylo_annotated.png - Annotated phylogram of 14 sequences
+2. Covid_cladograms.png - annotated cladograms of all 14 sequences and 4       SARS sequences
+3. DistMatrix.png - Distance Matrix of the 14 strains
+4. Pipeline.png - Pipeline of the whole workflow
 
-
+# Pipeline
 ![pipeline for the BIOL 812 assignment](./Figures/Pipeline.png)
 
