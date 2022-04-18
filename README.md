@@ -2,8 +2,6 @@
 # BIOL812 Final Group Project
 ## Authors: Gihyun Yoo, Heather Lounder, Kayleigh Casmey, Glafira Ermakova
 
-This is an R Markdown document that generates a github readme.md file.
-
 Assignment prepared for BIOL 812 Introduction to Computational Analysis Winter 2022. In this pipeline, we concatenated DNA sequences (in Python) for 14 Coronavirus variants (Including MERS, SARS and COVID-19) in order to run a MUSCLE multiple sequence alignment (R script ran in Unix). Using this alignment we generated a distance matrix, and phylogeny trees (In R) in order to examine the evolutionary relationship between the different variants. We also repeated these steps (concatenate, MUSCLE, Distance matrix, phylogeny trees) for 4 of the SARS sequences (In R).
 
 # Sequences
@@ -56,7 +54,7 @@ Assignment prepared for BIOL 812 Introduction to Computational Analysis Winter 2
 3. Run_MUSCLE.sh - runs the MUSCLE.R script in commandline to produce an       alignment file "cov_alignment.fasta"
 4. Dist_Tree.R - Based on the "cov_alignment.fasta", creates a distance        matrix ("DistMatrix.pdf" and "DistMatrix.csv"), cladogram
    ("CoV_cladogram.pdf"), phylogram ("CoV_phylogram.pdf"), cladogram with      bootstrap values ("CoV_cladogram_bs"), annotated phylogram                  ("CoV_phylo_annotated.pdf"), and annotated cladogram                        ("CoV_clado_annotated.pdf")
-5. SARS-Cov-2.R - converts 4 SARS sequences ("CoV_WTDeer_OL855841",            "hCoV_BS001349", "hCoV_ON078487", "SARS-CoV2_NC_045512") into 1             concatenated fasta file ("CoV2_concatenated.fasta"), runs a MUSCLE          alignment ("CoV2_alignment.fasta"), creates distance matrix                 ("DistMatrix_CoV2.pdf","DistMatrix_CoV2.csv"), and cladogram                ("CoV2_cladogram_annotated.pdf","Covid_Cladograms.pdf").
+5. SARS-Cov-2.R - converts 4 SARS sequences ("CoV_WTDeer_OL855841",            "hCoV_BS001349", "hCoV_ON078487", "SARS-CoV2_NC_045512") into 1             concatenated fasta file ("CoV2_concatenated.fasta"), runs a MUSCLE          alignment ("CoV2_alignment.fasta"), creates distance matrix                 ("DistMatrix_CoV2.pdf", "DistMatrix_CoV2.csv"), and cladogram               ("CoV2_cladogram_annotated.pdf", "Covid_Cladograms.pdf").
 
 
 # Figures
