@@ -8,7 +8,9 @@ Assignment prepared for BIOL 812 Introduction to Computational Analysis Winter 2
 
 # Sequences
  1. Bat_Cov_DQ-022305.fasta : Bat SARS coronavirus HKU3-1, complete genome
+ 
     sequence obtained from: 
+    
  2. CoV_WTDeer_OL855841.fasta: white-tailed deer SARS 2 isolate
     sequence obtained from:
  3. hCoV_BS001349.fasta: SARS 2 (Japan), complete genome
