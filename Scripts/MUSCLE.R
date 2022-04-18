@@ -8,8 +8,12 @@ library(muscle)
 library(bios2mds)
 library(msa)
 
+# Read FASTA file
+seq <- read.FASTA("./covseq_concatenated.fasta")
+
 # Load DNAStringSet file
-seq_string <- readDNAStringSet(filepath = "./covseq_DNAStringSet")
+seq_string <- seq %>% as.character %>% lapply(.,paste0,collapse="") %>%
+        unlist %>% DNAStringSet
 
 # Multiple alignments with MUSCLE
 seq_align <- muscle::muscle(stringset= seq_string, quiet=T)

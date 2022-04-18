@@ -17,13 +17,9 @@ fastaconc(filenames, inputdir = "./Sequences", out.file = "./Output/covseq_conca
 
 seq <- read.FASTA("./Output/covseq_concatenated.fasta") #read concatenated sequence
 
-
 # Convert DNASbin to DNAStringSet file
 seq_string <- seq %>% as.character %>% lapply(.,paste0,collapse="") %>%
         unlist %>% DNAStringSet
-
-writeXStringSet(seq_string, filepath = "./Output/covseq_DNAStringSet", 
-                format = "fasta") #save as fasta file
 
 # Identify gaps in sequence lengths
 SeqLen <- as.numeric(lapply(seq_string, length))
